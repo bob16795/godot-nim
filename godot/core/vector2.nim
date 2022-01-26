@@ -162,7 +162,7 @@ proc setRotation*(self: var Vector2, radians: float32) {.inline, noinit.} =
   self.y = sin(radians)
 
 proc rotated*(self: Vector2; phi: float32): Vector2 {.inline, noinit.} =
-  result.setRotation(phi)
+  result.setRotation(phi + self.angle)
   result *= self.length()
 
 proc tangent*(self: Vector2): Vector2 {.inline, noinit.} =
